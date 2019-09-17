@@ -833,9 +833,9 @@ bool DataAccess::checkOpcKeys( const uint8_t opP[16] )
       ComputeOPc (key_bin, opP, opccalc);
 
       std::stringstream ss;
-      ss << std::hex << std::setfill('0') << std::setw(2);
+      ss << std::hex;
       for(int i(0);i<KEY_LENGTH;++i){
-          ss<< (unsigned int)opccalc[i];
+          ss << std::setfill('0') << std::setw(2) << (unsigned int)opccalc[i];
       }
       std::string newopc = ss.str();
       std::cout << "NEW OPC :" << newopc << std::endl;
